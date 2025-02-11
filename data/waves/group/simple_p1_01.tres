@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GroupData" load_steps=3 format=3 uid="uid://ba5i5sjq0kwmn"]
+
+[ext_resource type="PackedScene" uid="uid://x2cavs7yxn4i" path="res://scenes/resident.tscn" id="1_5g8hq"]
+[ext_resource type="Script" path="res://scripts/data/group_data.gd" id="1_awvy4"]
+
+[resource]
+script = ExtResource("1_awvy4")
+enemy_scene = ExtResource("1_5g8hq")
+count = 3
+spawn_interval = 1.0
+path_variation = 1.0

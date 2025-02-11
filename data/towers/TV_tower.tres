@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerData" load_steps=3 format=3 uid="uid://npk1lqlt0m2b"]
+
+[ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_qn2fs"]
+[ext_resource type="SpriteFrames" uid="uid://c31rcchiidlf8" path="res://assets/animations/tv_tower.tres" id="2_k367q"]
+
+[resource]
+script = ExtResource("1_qn2fs")
+name = "TV tower"
+cost = 10
+life = 100
+attack_damage = 0
+attack_interval = 1.2
+max_targets = 1
+sprite_frames = ExtResource("2_k367q")
+idle_animation = "idle"
+attack_animation = "attack"
+take_damage_animation = ""
+defeat_animation = ""
+attack_type = ""
+attack_effect = ""
+upgrade_options = Array[Dictionary]([{}])

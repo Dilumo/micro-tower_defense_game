@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=4 format=3 uid="uid://crox2i00uiaan"]
+
+[ext_resource type="Script" path="res://scripts/data/wave_data.gd" id="1_15noe"]
+[ext_resource type="Resource" uid="uid://ba5i5sjq0kwmn" path="res://data/waves/group/simple_p1_01.tres" id="1_rkqx7"]
+[ext_resource type="Script" path="res://scripts/data/group_data.gd" id="1_wajjm"]
+
+[resource]
+script = ExtResource("1_15noe")
+groups = Array[ExtResource("1_wajjm")]([ExtResource("1_rkqx7")])
+spawn_delay = 2.0

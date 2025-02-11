@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://88wl8fs484yb"]
+
+[ext_resource type="Script" path="res://scripts/tower.gd" id="1_wgf2e"]
+[ext_resource type="Resource" uid="uid://npk1lqlt0m2b" path="res://data/towers/TV_tower.tres" id="2_7ln8i"]
+[ext_resource type="PackedScene" uid="uid://bgxr3rt4lqdnm" path="res://scenes/projectile.tscn" id="2_nsj4r"]
+[ext_resource type="SpriteFrames" uid="uid://c31rcchiidlf8" path="res://assets/animations/tv_tower.tres" id="4_0gi01"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xje8h"]
+radius = 107.0
+
+[node name="tower" type="Area2D" node_paths=PackedStringArray("timer", "sprite_node", "animated_sprite")]
+script = ExtResource("1_wgf2e")
+tower_data = ExtResource("2_7ln8i")
+timer = NodePath("Timer")
+sprite_node = NodePath("Sprite2D")
+animated_sprite = NodePath("Sprite2D/AnimatedSprite2D")
+projectile_scene = ExtResource("2_nsj4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.710938, 0.710938)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(12.6593, -12.6593)
+scale = Vector2(1.64983, 1.64983)
+sprite_frames = ExtResource("4_0gi01")
+animation = &"idle"
+frame_progress = 0.207314
+
+[node name="collsion" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xje8h")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]

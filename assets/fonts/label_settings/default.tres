@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bnmqcwpsa4f2o"]
+
+[ext_resource type="FontFile" uid="uid://b7gsumoeemwy5" path="res://assets/fonts/Born2bSportyFS.otf" id="1_wvrui"]
+
+[resource]
+font = ExtResource("1_wvrui")
+font_size = 31

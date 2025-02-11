@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bukeyj7l11t3e"]
+
+[ext_resource type="Script" path="res://scripts/goal_point.gd" id="1_0v4d3"]
+[ext_resource type="Texture2D" uid="uid://b6cat30w10hb0" path="res://assets/sprites/elements/libary_01.png" id="2_sj6gq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyc7p"]
+radius = 77.1622
+
+[node name="goalPoint" type="Area2D" groups=["targets"]]
+collision_layer = 2
+collision_mask = 2
+priority = 1
+script = ExtResource("1_0v4d3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hyc7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sj6gq")

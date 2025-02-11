@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://x2cavs7yxn4i"]
+
+[ext_resource type="Script" path="res://scripts/resident.gd" id="1_cgq5p"]
+[ext_resource type="Texture2D" uid="uid://3ygpdfok4bue" path="res://assets/sprites/animations/resident/walking.png" id="2_7jaic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5aeft"]
+radius = 24.0832
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddf55"]
+radius = 27.2029
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bvki"]
+atlas = ExtResource("2_7jaic")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kpvq"]
+atlas = ExtResource("2_7jaic")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1icy8"]
+atlas = ExtResource("2_7jaic")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4hox"]
+atlas = ExtResource("2_7jaic")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nm3xt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bvki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kpvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1icy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kpvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4hox")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="resident" type="CharacterBody2D" node_paths=PackedStringArray("highlight_sprite", "attack_area", "animation") groups=["enemies"]]
+script = ExtResource("1_cgq5p")
+highlight_sprite = NodePath("hightlight")
+attack_area = NodePath("Area2D")
+animation = NodePath("AnimatedSprite2D")
+
+[node name="base" type="Sprite2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="hightlight" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+scale = Vector2(0.0349121, 0.0349121)
+texture = ExtResource("2_7jaic")
+
+[node name="collison" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5aeft")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ddf55")
+debug_color = Color(0.992157, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nm3xt")
+animation = &"walking"
+frame_progress = 0.476127

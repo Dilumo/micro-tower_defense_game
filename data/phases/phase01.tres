@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PhaseData" load_steps=3 format=3 uid="uid://nw3w5wledlt0"]
+
+[ext_resource type="Script" path="res://scripts/data/phase_data.gd" id="1_1k473"]
+[ext_resource type="Resource" uid="uid://crox2i00uiaan" path="res://data/waves/wave_p1_01.tres" id="2_o0j3w"]
+
+[resource]
+script = ExtResource("1_1k473")
+waves = Array[Resource]([ExtResource("2_o0j3w")])
