@@ -9,9 +9,7 @@ func _ready():
 	if not timer:
 		timer = Timer.new()
 		add_child(timer)
-	timer.wait_time = spawn_interval
-	timer.timeout.connect(_on_timer_timeout)
-	timer.start()
+
 
 func _on_timer_timeout():
 	if resident_scene and path:

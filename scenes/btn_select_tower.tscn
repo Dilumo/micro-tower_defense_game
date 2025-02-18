@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://chkbo6rynk2uw"]
+
+[ext_resource type="Script" path="res://scripts/button_tower_selecet.gd" id="1_2gph4"]
+[ext_resource type="Texture2D" uid="uid://sg7oamcbt44x" path="res://assets/interface/tower_select_base.png" id="2_bpj7u"]
+[ext_resource type="Texture2D" uid="uid://ck31gh28ktr35" path="res://assets/interface/det_left.png" id="3_5behi"]
+[ext_resource type="Texture2D" uid="uid://tqwqx4jsqplb" path="res://assets/interface/det_rigth.png" id="4_fnnsu"]
+[ext_resource type="FontFile" uid="uid://b7gsumoeemwy5" path="res://assets/fonts/Born2bSportyFS.otf" id="5_q7pyf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1die"]
+font = ExtResource("5_q7pyf")
+font_size = 14
+
+[node name="btn_select_tower" type="Button" node_paths=PackedStringArray("icon_node", "cost_label")]
+custom_minimum_size = Vector2(100.17, 0)
+offset_right = 124.0
+offset_bottom = 140.0
+flat = true
+script = ExtResource("1_2gph4")
+icon_node = NodePath("icon")
+cost_label = NodePath("lbl_cost")
+
+[node name="background" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bpj7u")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 4
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="det" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 19.0
+offset_bottom = 20.0
+texture = ExtResource("3_5behi")
+expand_mode = 1
+
+[node name="det2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 19.0
+grow_vertical = 0
+texture = ExtResource("3_5behi")
+expand_mode = 1
+flip_v = true
+
+[node name="det3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_fnnsu")
+expand_mode = 1
+
+[node name="det4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -19.0
+offset_bottom = 20.0
+grow_horizontal = 0
+texture = ExtResource("4_fnnsu")
+expand_mode = 1
+flip_v = true
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="lbl_cost" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -29.0
+offset_right = 41.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$ 000 "
+label_settings = SubResource("LabelSettings_p1die")
+horizontal_alignment = 1
+vertical_alignment = 1

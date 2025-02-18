@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="TowerData" load_steps=3 format=3 uid="uid://npk1lqlt0m2b"]
+[gd_resource type="Resource" script_class="TowerData" load_steps=5 format=3 uid="uid://npk1lqlt0m2b"]
 
+[ext_resource type="Texture2D" uid="uid://bolo0iy2s6vt" path="res://assets/sprites/towers/icon_tv_tower.png" id="1_82j03"]
 [ext_resource type="Script" path="res://scripts/data/tower_data.gd" id="1_qn2fs"]
 [ext_resource type="SpriteFrames" uid="uid://c31rcchiidlf8" path="res://assets/animations/tv_tower.tres" id="2_k367q"]
+[ext_resource type="Texture2D" uid="uid://cg6hpmtef61bq" path="res://assets/sprites/towers/tv_tower.png" id="2_yxbcf"]
 
 [resource]
 script = ExtResource("1_qn2fs")
-name = "TV tower"
+name = "TV Tower"
 cost = 10
-life = 100
-attack_damage = 0
+health = 100
+damage = 10
+range = 120.0
 attack_interval = 1.2
 max_targets = 1
+sprite = ExtResource("2_yxbcf")
+icon = ExtResource("1_82j03")
 sprite_frames = ExtResource("2_k367q")
 idle_animation = "idle"
 attack_animation = "attack"
